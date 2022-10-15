@@ -1,0 +1,1 @@
+import React from 'react'import { useGetOne,useRecordContext } from 'react-admin'const GetOne = (props) => {    const product  = useRecordContext();    return (        <div>{product.title}</div>    )};export default GetOne

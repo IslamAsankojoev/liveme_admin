@@ -1,0 +1,1 @@
+import { Layout } from 'react-admin';import { SimpleMenu } from './Menu';export const SimpleLayout = props => <Layout {...props} menu={SimpleMenu} />;
