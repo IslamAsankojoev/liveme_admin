@@ -1,1 +1,50 @@
-import { AuthProvider } from 'react-admin';import nookies, {destroyCookie, parseCookies, setCookie} from 'nookies';// http://179.61.188.39:8000// @ts-ignoreconst authProvider: AuthProvider = {    // @ts-ignore    login: async ({username, password}) => {        const request = new Request(`${process.env.REACT_APP_API}/api/users/login/`, {            method: 'POST',            body: JSON.stringify({username, password}),            headers: new Headers({'Content-Type': 'application/json'}),        });        return fetch(request)            .then(response => {                if (response.status < 200 || response.status >= 300) {                    throw new Error(response.statusText);                }                return response.json();            })            .then(auth => {                setCookie(null, 'auth', JSON.stringify(auth), {                    maxAge: 24*60*60                })            })            .catch(() => {                throw new Error('Network error')            });    },    logout: () => {        destroyCookie(null, 'auth')        return Promise.resolve();    },    // @ts-ignore    checkAuth: () => parseCookies().auth        ? Promise.resolve({redirect: '/users'})        : Promise.reject({message: 'login.required'}),    // @ts-ignore    getIdentity: () => {        try {            // @ts-ignore            const { username, email } =  JSON.parse(parseCookies().auth)            return Promise.resolve({username, email});        } catch (error) {            return Promise.reject(error);        }    }}export default authProvider;
+import { AuthProvider } from 'react-admin';
+import Cookies from 'js-cookie'
+
+// http://179.61.188.39:8000
+// @ts-ignore
+const authProvider: AuthProvider = {
+    // @ts-ignore
+    login: async ({ username, password }) => {
+        const request = new Request(`${process.env.REACT_APP_API}/api/users/login/`, {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: new Headers({ 'Content-Type': 'application/json' }),
+        });
+        return fetch(request)
+            .then(response => {
+                if (response.status < 200 || response.status >= 300) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then(auth => {
+                Cookies.set('auth', auth.user.token.access);
+            })
+            .catch(() => {
+                throw new Error('Network error')
+            });
+
+    },
+    logout: () => {
+        Cookies.remove('auth');
+        return Promise.resolve();
+    },
+    // @ts-ignore
+    checkAuth: () => Cookies.get('auth')
+        ? Promise.resolve({ redirect: '/users' })
+        : Promise.reject({ message: 'login.required' }),
+
+    // @ts-ignore
+    getIdentity: () => {
+        try {
+            // @ts-ignore
+            const token = Cookies.get('auth');
+            return Promise.resolve(token);
+        } catch (error) {
+            return Promise.reject(error);
+        }
+    }
+}
+
+export default authProvider;

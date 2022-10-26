@@ -1,1 +1,25 @@
-import * as React from "react";import {ImageField, ImageInput, useEditContext, useRecordContext, useUpdate} from "react-admin";const ImageInputCustom = (props) => {    const [newImage, setNewImage] = React.useState(false);//    const product = useRecordContext();//    const { record, isLoading } = useEditContext();//    console.log(product)//    console.log(record)    const setImage = () =>{        setNewImage(true)    }    return (        <>            <ImageInput {...props} onChange={(e)=>{                console.log(e)                setImage()            }} >                <ImageField source={"src"} />            </ImageInput>            {!newImage && <ImageField source={'image'} />}        </>    );}export default ImageInputCustom;
+import * as React from "react";
+import { ImageField, ImageInput } from "react-admin";
+
+const ImageInputCustom = (props) => {
+    const [newImage, setNewImage] = React.useState(false);
+    const setImage = () => {
+        setNewImage(true)
+    }
+
+
+
+
+    return (
+        <>
+            <ImageInput {...props} onChange={(e) => {
+                setImage()
+            }} >
+                <ImageField source={"src"} />
+            </ImageInput>
+            {!newImage && <ImageField source={'image'} />}
+        </>
+    );
+}
+export default ImageInputCustom;
+
