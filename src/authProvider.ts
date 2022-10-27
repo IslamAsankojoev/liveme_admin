@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 const authProvider: AuthProvider = {
     // @ts-ignore
     login: async ({ username, password }) => {
-        const request = new Request(`${process.env.REACT_APP_API}/api/users/login/`, {
+        const request = new Request(`${process.env.REACT_APP_API}/api/login/`, {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -19,7 +19,7 @@ const authProvider: AuthProvider = {
                 return response.json();
             })
             .then(auth => {
-                Cookies.set('auth', auth.user.token.access);
+                Cookies.set('auth', auth.access);
             })
             .catch(() => {
                 throw new Error('Network error')
