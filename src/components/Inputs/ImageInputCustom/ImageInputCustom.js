@@ -7,9 +7,6 @@ const ImageInputCustom = (props) => {
         setNewImage(true)
     }
 
-
-
-
     return (
         <>
             <ImageInput {...props} onChange={(e) => {

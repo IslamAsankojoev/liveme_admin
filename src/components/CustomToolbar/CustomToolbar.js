@@ -1,11 +1,12 @@
-import {SaveButton, Toolbar} from "react-admin";
+import { SaveButton, Toolbar, DeleteButton } from "react-admin";
 
 
-const CustomToolbar = () =>{
+const CustomToolbar = () => {
     return (
-            <Toolbar>
-                <SaveButton alwaysEnable />
-            </Toolbar>
+        <Toolbar>
+            <SaveButton alwaysEnable />
+            <DeleteButton />
+        </Toolbar>
     )
 }
 

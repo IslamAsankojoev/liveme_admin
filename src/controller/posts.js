@@ -18,7 +18,7 @@ import {
     DeleteButton,
     CloneButton,
     TabbedForm,
-    FormTab, useRedirect, ImageField
+    FormTab, useRedirect, ImageField, Form
 } from 'react-admin';
 import React from "react";
 import ImageInputCustom from "../components/Inputs/ImageInputCustom/ImageInputCustom";
@@ -35,8 +35,8 @@ export const PostList = () => (
             <TextField source="id" />
             <TextField source="title" />
             <ImageField source="image" />
-            <TextField source="regular_price" />
-            <TextField source="sale_price" />
+            <TextField source="price" />
+            <TextField source="sale" />
             <BooleanField source="is_published" />
             <ReferenceField source="category" reference="products/category">
                 <TextField source="title" />
@@ -57,30 +57,34 @@ export const ProductEdit = () => {
         <Edit>
             <TabbedForm onSubmit={(data) => { CustomCreateUpdate(location, data, redirect, '/products', id) }}>
                 <FormTab label={<FlagImage flag={'ru'} tab="Russian" />}>
-                    <TextInput source="title_ru" sx={{ width: '400px' }} />
-                    <TextInput source="description_ru" />
+                    <TextInput source="title_ru" sx={{ width: '100%' }} />
+                    <TextInput source="description_ru" multiline sx={{ width: '100%' }} />
+                    <TextInput source="price_ru" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'us'} tab="English" />}>
-                    <TextInput source="title_en" sx={{ width: '400px' }} />
-                    <TextInput source="description_en" />
+                    <TextInput source="title_en" sx={{ width: '100%' }} />
+                    <TextInput source="description_en" multiline sx={{ width: '100%' }} />
+                    <TextInput source="price_en" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
-                    <TextInput source="title_kg" sx={{ width: '400px' }} />
-                    <TextInput source="description_kg" />
+                    <TextInput source="title_kg" sx={{ width: '100%' }} />
+                    <TextInput source="description_kg" multiline sx={{ width: '100%' }} />
+                    <TextInput source="price_kg" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
-                    <TextInput source="title_tr" sx={{ width: '400px' }} />
-                    <TextInput source="description_tr" />
+                    <TextInput source="title_tr" sx={{ width: '100%' }} />
+                    <TextInput source="description_tr" multiline sx={{ width: '100%' }} />
+                    <TextInput source="price_tr" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
-                    <TextInput source="title_pl" sx={{ width: '400px' }} />
-                    <TextInput source="description_pl" />
+                    <TextInput source="title_pl" sx={{ width: '100%' }} />
+                    <TextInput source="description_pl" multiline sx={{ width: '100%' }} />
+                    <TextInput source="price_pl" />
                 </FormTab>
                 <FormTab label="Details">
                     <TextField source="id" />
                     <ImageInputCustom source="image" />
-                    <TextInput source="regular_price" />
-                    <TextInput source="sale_price" />
+                    <TextInput source="sale" />
                     <NumberInput source="stock" />
                     <ReferenceInput source="category" reference="products/category">
                         <SelectInput optionText="title" />
@@ -104,30 +108,34 @@ export const PostCreate = () => {
         <Create>
             <TabbedForm onSubmit={(data) => { CustomCreateUpdate(location, data, redirect, '/products', id) }}>
                 <FormTab label={<FlagImage flag={'ru'} tab="Russian" />}>
-                    <TextInput source="title_ru" sx={{ width: '400px' }} />
-                    <TextInput source="description_ru" />
+                    <TextInput source="title_ru" sx={{ width: '100%' }} />
+                    <TextInput source="description_ru" multiline sx={{ width: '100%' }} />
+                    <NumberInput source="price_ru" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'us'} tab="English" />}>
-                    <TextInput source="title_en" sx={{ width: '400px' }} />
-                    <TextInput source="description_en" />
+                    <TextInput source="title_en" sx={{ width: '100%' }} />
+                    <TextInput source="description_en" multiline sx={{ width: '100%' }} />
+                    <NumberInput source="price_en" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
-                    <TextInput source="title_kg" sx={{ width: '400px' }} />
-                    <TextInput source="description_kg" />
+                    <TextInput source="title_kg" sx={{ width: '100%' }} />
+                    <TextInput source="description_kg" multiline sx={{ width: '100%' }} />
+                    <NumberInput source="price_kg" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
-                    <TextInput source="title_tr" sx={{ width: '400px' }} />
-                    <TextInput source="description_tr" />
+                    <TextInput source="title_tr" sx={{ width: '100%' }} />
+                    <TextInput source="description_tr" multiline sx={{ width: '100%' }} />
+                    <NumberInput source="price_tr" />
                 </FormTab>
                 <FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
-                    <TextInput source="title_pl" sx={{ width: '400px' }} />
-                    <TextInput source="description_pl" />
+                    <TextInput source="title_pl" sx={{ width: '100%' }} />
+                    <TextInput source="description_pl" multiline sx={{ width: '100%' }} />
+                    <NumberInput source="price_pl" />
                 </FormTab>
                 <FormTab label="Details">
                     <TextField source="id" />
                     <ImageInputCustom source="image" />
-                    <TextInput source="regular_price" />
-                    <TextInput source="sale_price" />
+                    <TextInput source="sale" />
                     <NumberInput source="stock" />
                     <ReferenceInput source="category" reference="products/category">
                         <SelectInput optionText="title" />
