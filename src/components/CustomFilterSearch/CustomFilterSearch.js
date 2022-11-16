@@ -1,7 +1,5 @@
-import {TextInput, SearchInput} from "react-admin";
+import { TextInput } from 'react-admin'
 
-const CustomFilterSearch = [
-    <TextInput source="search" alwaysOn resettable/>,
-    ];
+const CustomFilterSearch = [<TextInput source="search" alwaysOn resettable />]
 
-export default CustomFilterSearch;
+export default CustomFilterSearch
