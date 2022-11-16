@@ -61,27 +61,52 @@ export const ProductEdit = () => {
 			>
 				<FormTab label={<FlagImage flag={'ru'} tab="Russian" />}>
 					<TextInput source="title_ru" sx={{ width: '100%' }} />
-					<TextInput source="description_ru" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_ru"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<TextInput source="price_ru" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'us'} tab="English" />}>
 					<TextInput source="title_en" sx={{ width: '100%' }} />
-					<TextInput source="description_en" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_en"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<TextInput source="price_en" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
 					<TextInput source="title_kg" sx={{ width: '100%' }} />
-					<TextInput source="description_kg" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_kg"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<TextInput source="price_kg" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
 					<TextInput source="title_tr" sx={{ width: '100%' }} />
-					<TextInput source="description_tr" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_tr"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<TextInput source="price_tr" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
 					<TextInput source="title_pl" sx={{ width: '100%' }} />
-					<TextInput source="description_pl" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_pl"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<TextInput source="price_pl" />
 				</FormTab>
 				<FormTab label="Details">
@@ -113,27 +138,52 @@ export const ProductCreate = () => {
 			>
 				<FormTab label={<FlagImage flag={'ru'} tab="Russian" />}>
 					<TextInput source="title_ru" sx={{ width: '100%' }} />
-					<TextInput source="description_ru" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_ru"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<NumberInput source="price_ru" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'us'} tab="English" />}>
 					<TextInput source="title_en" sx={{ width: '100%' }} />
-					<TextInput source="description_en" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_en"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<NumberInput source="price_en" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
 					<TextInput source="title_kg" sx={{ width: '100%' }} />
-					<TextInput source="description_kg" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_kg"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<NumberInput source="price_kg" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
 					<TextInput source="title_tr" sx={{ width: '100%' }} />
-					<TextInput source="description_tr" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_tr"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<NumberInput source="price_tr" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
 					<TextInput source="title_pl" sx={{ width: '100%' }} />
-					<TextInput source="description_pl" multiline sx={{ width: '100%' }} />
+					<TextInput
+						source="description_pl"
+						multiline
+						sx={{ width: '100%' }}
+						minRows={4}
+					/>
 					<NumberInput source="price_pl" />
 				</FormTab>
 				<FormTab label="Details">
