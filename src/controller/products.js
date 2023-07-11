@@ -68,6 +68,7 @@ export const ProductEdit = () => {
 						minRows={4}
 					/>
 					<TextInput source="price_ru" />
+					<TextInput source="stock_ru" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'us'} tab="English" />}>
 					<TextInput source="title_en" sx={{ width: '100%' }} />
@@ -78,6 +79,7 @@ export const ProductEdit = () => {
 						minRows={4}
 					/>
 					<TextInput source="price_en" />
+					<TextInput source="stock_en" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
 					<TextInput source="title_kg" sx={{ width: '100%' }} />
@@ -88,6 +90,7 @@ export const ProductEdit = () => {
 						minRows={4}
 					/>
 					<TextInput source="price_kg" />
+					<TextInput source="stock_kg" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
 					<TextInput source="title_tr" sx={{ width: '100%' }} />
@@ -98,6 +101,7 @@ export const ProductEdit = () => {
 						minRows={4}
 					/>
 					<TextInput source="price_tr" />
+					<TextInput source="stock_tr" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
 					<TextInput source="title_pl" sx={{ width: '100%' }} />
@@ -108,12 +112,12 @@ export const ProductEdit = () => {
 						minRows={4}
 					/>
 					<TextInput source="price_pl" />
+					<TextInput source="stock_pl" />
 				</FormTab>
 				<FormTab label="Details">
 					<TextField source="id" />
 					<ImageInputCustom source="image" />
 					<TextInput source="sale" />
-					<NumberInput source="stock" />
 					<ReferenceInput source="category" reference="products/category">
 						<SelectInput optionText="title" />
 					</ReferenceInput>
@@ -145,6 +149,7 @@ export const ProductCreate = () => {
 						minRows={4}
 					/>
 					<NumberInput source="price_ru" />
+					<NumberInput source="stock_ru" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'us'} tab="English" />}>
 					<TextInput source="title_en" sx={{ width: '100%' }} />
@@ -155,6 +160,7 @@ export const ProductCreate = () => {
 						minRows={4}
 					/>
 					<NumberInput source="price_en" />
+					<NumberInput source="stock_en" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'kg'} tab="Kyrgyz" />}>
 					<TextInput source="title_kg" sx={{ width: '100%' }} />
@@ -165,6 +171,7 @@ export const ProductCreate = () => {
 						minRows={4}
 					/>
 					<NumberInput source="price_kg" />
+					<NumberInput source="stock_kg" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'tr'} tab="Turkish" />}>
 					<TextInput source="title_tr" sx={{ width: '100%' }} />
@@ -175,6 +182,7 @@ export const ProductCreate = () => {
 						minRows={4}
 					/>
 					<NumberInput source="price_tr" />
+					<NumberInput source="stock_tr" />
 				</FormTab>
 				<FormTab label={<FlagImage flag={'pl'} tab="Polish" />}>
 					<TextInput source="title_pl" sx={{ width: '100%' }} />
@@ -185,12 +193,12 @@ export const ProductCreate = () => {
 						minRows={4}
 					/>
 					<NumberInput source="price_pl" />
+					<NumberInput source="stock_pl" />
 				</FormTab>
 				<FormTab label="Details">
 					<TextField source="id" />
 					<ImageInputCustom source="image" />
 					<TextInput source="sale" />
-					<NumberInput source="stock" />
 					<ReferenceInput source="category" reference="products/category">
 						<SelectInput optionText="title" />
 					</ReferenceInput>

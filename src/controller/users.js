@@ -9,7 +9,6 @@ import {
 	TextField,
 	Datagrid,
 	List,
-	PasswordInput,
 	EditButton,
 	DeleteButton,
 	ReferenceArrayField,
@@ -63,7 +62,7 @@ export const UserEdit = () => (
 				optionText="name"
 				optionValue="code"
 			/>
-			<PasswordInput source="password" />
+			{/* <PasswordInput source="password" /> */}
 			<ReferenceArrayField reference="orders" source="order_set">
 				<Datagrid>
 					<TextField source="id" />
@@ -98,7 +97,7 @@ export const UserCreate = () => (
 				optionText="name"
 				optionValue="code"
 			/>
-			<PasswordInput source="password" />
+			{/* <PasswordInput source="password" /> */}
 		</SimpleForm>
 	</Create>
 )
@@ -112,7 +111,7 @@ export const UserShow = () => (
 			<TextField source="username" />
 			<EmailField source="email" />
 			<TextField source="address" />
-			<TextField source="password" />
+			{/* <TextField source="password" /> */}
 		</SimpleShowLayout>
 	</Show>
 )
